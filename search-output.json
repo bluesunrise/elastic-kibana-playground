@@ -1,0 +1,46 @@
+{
+  "page": 1,
+  "per_page": 20,
+  "total": 1,
+  "saved_objects": [
+    {
+      "type": "search",
+      "id": "9a6fcf30-22e7-11ea-ae5e-af11c7843444",
+      "attributes": {
+        "title": "CRON2",
+        "description": "",
+        "hits": 0,
+        "columns": [
+          "_source"
+        ],
+        "sort": [
+          [
+            "@timestamp",
+            "desc"
+          ]
+        ],
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"highlightAll\":true,\"version\":true,\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[{\"meta\":{\"alias\":\"CRONQUERY\",\"negate\":false,\"disabled\":false,\"type\":\"phrase\",\"key\":\"container.name\",\"value\":\"dockergw8_cron_1\",\"params\":{\"query\":\"dockergw8_cron_1\"},\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.filter[0].meta.index\"},\"query\":{\"match\":{\"container.name\":{\"query\":\"dockergw8_cron_1\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}],\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"
+        }
+      },
+      "references": [
+        {
+          "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
+          "type": "index-pattern",
+          "id": "55db58a0-f77a-11e9-b518-2b25dde03b65"
+        },
+        {
+          "name": "kibanaSavedObjectMeta.searchSourceJSON.filter[0].meta.index",
+          "type": "index-pattern",
+          "id": "55db58a0-f77a-11e9-b518-2b25dde03b65"
+        }
+      ],
+      "migrationVersion": {
+        "search": "7.4.0"
+      },
+      "updated_at": "2019-12-20T05:14:31.203Z",
+      "version": "WzgsNTRd"
+    }
+  ]
+}
