@@ -28,8 +28,8 @@ Here is how I generated output to search-output.json for a Kibana Query (see sea
 
 https://www.elastic.co/guide/en/kibana/master/using-api.html
 
-###PROTOTYPE GOAL:
-	* retrieve all saved queries (done)
-	* use the saved query to execute an Elastic Search *KQL QUERY* as a metric check
+### PROTOTYPE GOAL
+* retrieve all saved queries (done)
+* use the saved query to execute an Elastic Search *KQL QUERY* as a metric check
 	
 For example, finding log entries of some search criteria happening over a time period, see search-output.txt
