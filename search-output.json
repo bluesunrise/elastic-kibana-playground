@@ -4,43 +4,54 @@
   "total": 1,
   "saved_objects": [
     {
-      "type": "search",
-      "id": "9a6fcf30-22e7-11ea-ae5e-af11c7843444",
+      "type": "query",
+      "id": "CRON",
       "attributes": {
-        "title": "CRON2",
-        "description": "",
-        "hits": 0,
-        "columns": [
-          "_source"
-        ],
-        "sort": [
-          [
-            "@timestamp",
-            "desc"
-          ]
-        ],
-        "version": 1,
-        "kibanaSavedObjectMeta": {
-          "searchSourceJSON": "{\"highlightAll\":true,\"version\":true,\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[{\"meta\":{\"alias\":\"CRONQUERY\",\"negate\":false,\"disabled\":false,\"type\":\"phrase\",\"key\":\"container.name\",\"value\":\"dockergw8_cron_1\",\"params\":{\"query\":\"dockergw8_cron_1\"},\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.filter[0].meta.index\"},\"query\":{\"match\":{\"container.name\":{\"query\":\"dockergw8_cron_1\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}],\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"
-        }
-      },
-      "references": [
-        {
-          "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
-          "type": "index-pattern",
-          "id": "55db58a0-f77a-11e9-b518-2b25dde03b65"
+        "title": "CRON",
+        "description": "find all cron errors",
+        "query": {
+          "query": "",
+          "language": "kuery"
         },
-        {
-          "name": "kibanaSavedObjectMeta.searchSourceJSON.filter[0].meta.index",
-          "type": "index-pattern",
-          "id": "55db58a0-f77a-11e9-b518-2b25dde03b65"
+        "filters": [
+          {
+            "meta": {
+              "index": "55db58a0-f77a-11e9-b518-2b25dde03b65",
+              "alias": "CRONQUERY",
+              "negate": false,
+              "disabled": false,
+              "type": "phrase",
+              "key": "container.name",
+              "value": "dockergw8_cron_1",
+              "params": {
+                "query": "dockergw8_cron_1"
+              }
+            },
+            "query": {
+              "match": {
+                "container.name": {
+                  "query": "dockergw8_cron_1",
+                  "type": "phrase"
+                }
+              }
+            },
+            "$state": {
+              "store": "appState"
+            }
+          }
+        ],
+        "timefilter": {
+          "from": "now-15m",
+          "to": "now",
+          "refreshInterval": {
+            "value": 0,
+            "pause": true
+          }
         }
-      ],
-      "migrationVersion": {
-        "search": "7.4.0"
       },
-      "updated_at": "2019-12-20T05:14:31.203Z",
-      "version": "WzgsNTRd"
+      "references": [],
+      "updated_at": "2019-12-23T22:45:17.640Z",
+      "version": "WzksNTVd"
     }
   ]
 }

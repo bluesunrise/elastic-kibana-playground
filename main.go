@@ -12,22 +12,6 @@ import (
 	"strings"
 )
 
-/*
-	To get this example to work, open up the docker-compose ports in docker-compose.yml
-    ELASTICSEARCH_URL
-ports:
-      - "9200:9200"
-
-Kibana requires
-	ports:
-      - "5601:5601"
-
-PROTOTYPE GOAL:
-	* retrieve all saved queries (done)
-	* use the saved query to execute an Elastic Search *search* as a metric check
-		for example, finding log entries of some search criteria happening greater than thresholds over time period
-		the "over time period" is a new requirement
- */
 func main() {
 	storedQueries, _ := retrieveStoredQueries();
 	storedQuery := storedQueries[0]
@@ -118,14 +102,10 @@ func retrieveStoredQueries() ([]string, int) {
 	var response *http.Response
 	var err error
 
-	// types of saved objects -- Valid options include visualization, dashboard, search, index-pattern, config, and timelion-sheet.
-
+	// types of saved objects -- Valid options include QUERY visualization, dashboard, search, index-pattern, config, and timelion-sheet.
 	// kibanaFilter := strings.NewReader("{ \"type\": \"index-pattern\", \"excludeExportDetails\": true }")
-	// request, err = http.NewRequest(http.MethodPost, "http://localhost:5601/api/saved_objects/_export", kibanaFilter);
-	//request, err = http.NewRequest(http.MethodGet, "http://localhost:5601/api/saved_objects/_find?type=index-pattern&search_fields=title&search=my*", nil);
 
-	// request, err = http.NewRequest(http.MethodGet, "http://localhost:5601/kibana/api/saved_objects/_find?type=index-pattern", nil);
-	request, err = http.NewRequest(http.MethodGet, "http://localhost:5601/kibana/api/saved_objects/_find?type=searcha", nil);
+	request, err = http.NewRequest(http.MethodGet, "http://localhost:5601/kibana/api/saved_objects/_find?type=query", nil);
 	if err != nil {
 		log.Fatalf("Error getting response: %s", err)
 	}
